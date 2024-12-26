@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="../static/css/upload.css"/>
+<script src="../static/js/upload.js" async></script>
+
+    <h1>Upload Music to Google Drive</h1>
+
+    <div id="file-list"></div> <!-- Container for displaying dropped file names -->
+    
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <br>
+
+        <div id="drop-area">
+            <p>Drag & Drop Music Files Here</p>
+            <input type="file" id="music" name="music" accept=".mp3,.wav" style="display: none;" required>
+        </div>
+        <button type="submit" id="upload-btn">Upload</button>
+    </form>
+
+    {% endblock %}

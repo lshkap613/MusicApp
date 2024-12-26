@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <script src="../static/js/savedPlaylists.js" async></script>
+    <link rel="stylesheet" href="../static/css/categorize.css">
+
+    <h1>Saved Playlists</h1>
+
+    {% for playlist in playlists %}
+        <button onclick="playPlaylist(`{{ playlist.ids }}`)">
+            {{ playlist.name }}</button>
+    {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <link rel="stylesheet" href="../static/css/library.css">
+    <script src="../static/js/library.js" async></script>
+    <h1 id="mylib">My Library</h1>
+
+    <div id="bar">
+        <div id="search">
+            <input id="search-inpt" type="text" placeholder="Search by name..." autocomplete="off">
+
+            <button id="search-btn">
+                <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+            </button>
+        </div>
+        
+        <button id="upload">
+            UPLOAD MUSIC
+        </button>
+
+        <button id="label-view" onclick="labelView()">
+            Label View
+        </button>
+    </div>
+    
+    <div id="search-results"></div>
+
+    <ul id="songs">
+        {% for file in files %}
+        <li>
+            <div class="song">
+                <i class="fa-solid fa-circle-play fa-xl" onclick="playAudio('{{ file.id }}')"></i>
+                
+                <span id="title{{ file.id }}">{{ file.name }}</span>
+
+                <div class="dropdown-menu" id="dropdown-{{ file.id }}">
+                    <button class = "edit" id="edit-{{ file.id }}" onclick="toggleDropdown('{{ file.id}}')">
+                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                    </button>
+
+                    <button class="tags" onclick="getLabels('{{ file.id }}')">
+                        <i class="fa fa-tags" aria-hidden="true"></i></i>
+                    </button>
+
+                    <div class="dropdown-content" id="dropdown-content-{{ file.id }}">
+                        <button onclick="renameFile('{{ file.id }}')">Rename</button>
+                        <button onclick="editLabels('{{ file.id }}', '{{ file.name }}')">Edit Labels</button>
+                        <button onclick="deleteFile('{{ file.id }}')">Delete</button>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="labels_{{file.id}}" type="hidden" class="labelList"></div>
+        </li>
+        {% endfor %}
+    </ul>
+   
+{% endblock %}

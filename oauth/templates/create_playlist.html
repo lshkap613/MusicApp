@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Create Playlist</h1>
+<script src="../static/js/createPlayList.js" async></script>
+<link rel="stylesheet" href="../static/css/categorize.css">
+
+<form action="/playlist" method="post" id="chooseLabels" onsubmit="processLabels(`{{ file_id }}`)">
+    <label for="labelnput" >Select a label:</label>
+
+    <select id="labelInput" onkeypress="handleKeyPress(event)">
+    </select>
+
+    <p><em>Press Enter after selecting each label</em></p>
+
+    <br><br>
+    <div id="labelList">
+        <!-- labels will be dynamically added here -->
+    </div>
+
+    <input type="hidden" name="labels" id="labelsInput" value="">
+
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}

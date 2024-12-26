@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="../static/css/register.css">
+<script src="../static/js/register.js" async></script>
+
+<div class="container">
+
+    <h2>Register</h2>
+
+    <form action="/register" method="post">
+        <h3>Step 1:</h3>
+        <br>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confPassword">Confirm Password:</label>
+        <input type="password" id="confPassword" name="confPassword" required>
+
+
+        <h3>Step 2:</h3>
+        <p><em>This app requires each user to have a google drive account. You may use an existing account or create a new account</em></p>
+        <input type="radio" name="googleAccount" id="existingAccount" value="existing">Use Existing Account</input>
+        <br>
+        <input type="radio" name="googleAccount" id="newAccount" value="new">Create New Google Account</input>
+        <br><br>
+
+        <div id="emailSection" style="display: none;">
+            <label for="email">Google Account:</label>
+            <input type="email" id="email" name="email" placeholder="account@gmail.com">
+        </div>
+
+        <br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+{% endblock %}

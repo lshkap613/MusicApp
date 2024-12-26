@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <script src="../static/js/categorize.js" async></script>
+    <link rel="stylesheet" href="../static/css/categorize.css">
+
+    <h1>Categorize</h1>
+
+    <h3 id="currFileName">Current file: {{ file_name }}</h3>
+
+    <form action="/labelFile" method="post" id="labelForm" onsubmit="processLabels(`{{ file_id }}`)">
+        <input type="text" id="labelInput" list="labelList" placeholder="Enter label..." autocomplete="off" oninput="handleInput(event)" onkeypress="handleKeyPress(event)">
+        <div id="autocompleteList">
+            <!-- suggested labels based on currently used labels displayed here-->
+        </div>
+        
+        <p><em>Press Enter after selecting each label</em></p>
+
+        <br><br>
+        <div id="labelList">
+            <!-- labels will be dynamically added here -->
+        </div>
+
+        <input type="hidden" name="file" id="fileIdInput" value= "{{file_id}}">
+        <input type="hidden" name="labels" id="labelsInput" value="">
+
+        <button type="submit">Submit</button>
+    </form>
+    
+    <ul id="labelOutput"></ul>
+
+{% endblock %}

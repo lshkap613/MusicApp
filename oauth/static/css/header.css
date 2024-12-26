@@ -1,0 +1,22 @@
+.header {
+    background-color: #4A2C40;
+    display: flex;
+    color: white;
+}
+
+#hiUser {
+    margin: auto 20px auto auto;
+}
+
+#hiUser a {
+    color: white;
+}
+
+img#logo{
+    width: 80px;
+    display: inline-block;
+}
+h1#myzmr {
+    display: inline-block;
+    font-size: 65px;
+}

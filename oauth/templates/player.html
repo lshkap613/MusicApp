@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <link rel="stylesheet" href="../static/css/playlist.css">
+  <link rel="stylesheet" href="../static/css/player.css">
+  <link rel="stylesheet" href="../static/css/saveModal.css">
+  <script src="../static/js/playlist.js" async></script>
+  <script src="../static/js/savePlaylist.js" async></script>
+
+  <div class="music-player">
+    <!-- Music player goes here -->
+    <audio id="audioPlayer" controls>
+      <source id="audioSource" src="" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+  </div>
+
+  <div class="playList">
+    <ul>
+      {% for id in playlist_ids %}
+      <div class="song" id="song_{{ id }}">
+          <li class="playlist_song">
+            <i class="fa-solid fa-circle-play fa-xl" onclick="playAudio('{{ id }}')"></i>
+            <span id="name{{ id }}">{{ id }}</span>
+          </li>
+        </div>
+      {% endfor %}
+
+    </ul>
+  </div>
+
+  {% if not noSave %}
+  <div id="save-div">
+    <button id="save" onclick="openModal()">Save This Playlist</button>
+  </div>
+  {% endif %}
+
+  <div id="nameModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <input type="text" id="playlistName" placeholder="Enter playlist name">
+      <button onclick="savePlaylist(`{{ playlist_ids }}`)">Save</button>
+    </div>
+  </div>
+
+
+  <div id="playlist-data" playlist="{{ playlist_ids }}" style="display:none;"></div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+.play-bttn { 
+  position: absolute; 
+  margin-left: -1.3em; 
+  width: 100%;
+}
+
+.playList {
+  background-color: white;
+  border: 1px solid white;
+  padding: 40px 0 0 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.song {
+  background-color: lightgray;
+  border: 1px solid black;
+  border-radius: 2px;
+  margin: 10px auto;
+  width: 85%;
+  height: 20px;
+  padding: 10px;
+}
+
+
+#save-div {
+  display: flex;
+  justify-content: center;
+  
+}
+
+#save {
+  height: 50px;
+}

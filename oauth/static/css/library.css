@@ -1,0 +1,119 @@
+#main {
+    margin-left: 250px;
+}
+
+h1#mylib {
+    text-align: center;
+    margin-top: 10px;
+    
+}
+
+#bar {
+    width: 94%;
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+}
+
+#bar * {
+    height: 35px;
+}
+
+.fa-magnifying-glass {
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+#search {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+#search-btn {
+    height: 35px;
+    vertical-align: top;
+}
+
+#search-inpt{
+    height: 30px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.song {
+    background-color: lightgray;
+    border: 1px solid black;
+    border-radius: 2px;
+    margin: 10px auto;
+    width: 85%;
+    height: 20px;
+    padding: 10px;
+}
+
+
+.edit, .tags {
+    background-color: lightgray;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.dropdown-menu, .edit, .tags {
+    float: right;
+}
+
+.edit:hover, .tags:focus {
+    background-color: gray;
+}
+ 
+.labelList {
+    margin: auto;
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.label {
+    margin-right: 5px;
+    width: fit-content;
+    display: inline-block;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.expanded {
+    height: auto;
+    transform: rotate(90deg); 
+
+}
+
+.dropdown-menu {
+    display: none;
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    margin-left: -90;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    margin-top: 20px;
+    background-color: white;
+    min-width: 90px;
+    z-index: 1;
+}
+
+.dropdown-content button{
+    color: gray;
+    border: none;
+    padding: 3px 4px;
+    display: block;
+    width: 90px;
+}
+
+.dropdown-content button:hover {background-color: black;}
+
+.show {display: block;}

@@ -1,0 +1,11 @@
+.music-player {
+    flex: 0 0 10vh;
+    width: 100%;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  audio {
+    width: 80%;
+  }
